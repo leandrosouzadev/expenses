@@ -39,16 +39,6 @@ class MyHomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 15,
-                vertical: 10,
-              ),
-              decoration: BoxDecoration(
-                  border: Border.all(
-                color: Colors.black,
-                width: 2,
-              )),
-              padding: const EdgeInsets.all(10),
               child: Card(
                 color: Colors.blue,
                 child: Text('Gráfico'),
@@ -61,7 +51,24 @@ class MyHomePage extends StatelessWidget {
                     child: Row(
                   children: <Widget>[
                     Container(
-                      child: Text(tr.value.toString()),
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 10,
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                        color: Colors.purple,
+                        width: 2,
+                      )),
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        tr.value.toString(),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.purple,
+                        ),
+                      ),
                     ),
                     Column(
                       children: <Widget>[
