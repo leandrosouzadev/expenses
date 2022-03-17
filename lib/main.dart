@@ -19,6 +19,9 @@ class ExpensesAll extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
+
   final _transactions = [
     Transaction(
         id: 't1',
@@ -99,12 +102,14 @@ class MyHomePage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     TextField(
-                      decoration: InputDecoration(
+                      controller: titleController,
+                      decoration: const InputDecoration(
                         labelText: 'Titulo',
                       ),
                     ),
                     TextField(
-                      decoration: InputDecoration(
+                      controller: valueController,
+                      decoration: const InputDecoration(
                         labelText: 'Valor',
                       ),
                     ),
@@ -113,9 +118,12 @@ class MyHomePage extends StatelessWidget {
                       children: [
                         // ignore: deprecated_member_use
                         FlatButton(
-                          child: Text('Nova transação'),
+                          child: const Text('Nova transação'),
                           textColor: Colors.purple,
-                          onPressed: () {},
+                          onPressed: () {
+                            print(titleController.text);
+                            print(valueController.text);
+                          },
                         ),
                       ],
                     ),
