@@ -48,6 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+    Navigator.of(context).pop(); // retira a ultima tela... fecha o modal
   }
 
   _openTransactionFormModa(BuildContext context) {
