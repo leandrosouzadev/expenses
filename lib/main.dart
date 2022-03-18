@@ -15,6 +15,11 @@ class ExpensesAll extends StatelessWidget {
     return MaterialApp(
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        // ignore: deprecated_member_use
+        accentColor: Colors.amber,
+      ),
     );
   }
 }
