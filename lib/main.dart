@@ -16,7 +16,7 @@ class ExpensesAll extends StatelessWidget {
     final ThemeData themeData = ThemeData();
 
     return MaterialApp(
-        home: MyHomePage(),
+        home: const MyHomePage(),
         debugShowCheckedModeBanner: false,
         theme: themeData.copyWith(
             colorScheme: themeData.colorScheme.copyWith(
@@ -44,7 +44,7 @@ class ExpensesAll extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();

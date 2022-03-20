@@ -67,17 +67,15 @@ class _TransactionFormState extends State<TransactionForm> {
                 labelText: 'Valor (R\$)',
               ),
             ),
-            Container(
+            SizedBox(
               height: 70,
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: Text(_selectedDate == null
-                        ? 'Nenhuma data selecionada!'
-                        : 'Data selecionada ${DateFormat('d/MM/y').format(_selectedDate!)}'),
+                    child: Text(
+                        'Data selecionada ${DateFormat('d/MM/y').format(_selectedDate)}'),
                   ),
-                  FlatButton(
-                      textColor: Theme.of(context).colorScheme.primary,
+                  TextButton(
                       onPressed: _showDatePicker,
                       child: const Text('Selecionar Data',
                           style: TextStyle(
@@ -89,11 +87,8 @@ class _TransactionFormState extends State<TransactionForm> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                RaisedButton(
+                ElevatedButton(
                   child: const Text('Nova transação'),
-                  color: Theme.of(context).colorScheme.primary,
-                  textColor:
-                      Theme.of(context).textTheme.button!.color ?? Colors.white,
                   onPressed: _submitForm,
                 ),
               ],
