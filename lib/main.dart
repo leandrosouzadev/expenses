@@ -25,11 +25,15 @@ class ExpensesAll extends StatelessWidget {
             ),
             textTheme: themeData.textTheme.copyWith(
                 headline6: const TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            )),
+                  fontFamily: 'OpenSans',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                button: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                )),
             appBarTheme: const AppBarTheme(
                 titleTextStyle: TextStyle(
               fontFamily: 'OpenSans',
