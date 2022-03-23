@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:expenses/components/chart.dart';
@@ -134,7 +135,8 @@ class _MyHomePageState extends State<MyHomePage> {
             //     mainAxisAlignment: MainAxisAlignment.center,
             //     children: <Widget>[
             //       const Text('Exibir Gráfico'),
-            //       Switch(
+            //       Switch.adaptive(
+            //           activeColor: Theme.of(context).colorScheme.secondary,
             //           value: _showChart,
             //           onChanged: (value) {
             //             setState(() {
@@ -156,9 +158,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () => _openTransactionFormModa(context)),
+      floatingActionButton: Platform.isIOS
+          ? Container()
+          : FloatingActionButton(
+              child: const Icon(Icons.add),
+              onPressed: () => _openTransactionFormModa(context)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
